@@ -50,3 +50,39 @@ def print_dict(lst):
 data = csv_to_dict('NER1.csv')
 dict = create_dict(data)
 print_dict(dict)
+
+# Cohen's Kappa calculation
+# The formula for Cohen's Kappa is:
+# Kappa = (Po - Pe) / (1 - Pe)
+
+# Comparing with same data for now (dict)
+
+# Po
+
+
+
+
+# Fliess' Kappa 
+
+# Making a list of labels for each image
+
+def create_label_list(data):
+    lst = []
+    for i in range(len(data)):
+        # Ensure the row has at least 5 columns (Skipping the blank rows)
+        if len(data[i]) > 4:
+            # Extracting the "choice" column
+            label = data[i][2]
+            lst.append(label)
+    return lst
+
+# Print the list of labels
+def print_labels(lst):
+    for i in range(len(lst)):
+        print(lst[i])
+
+# Testing for file CV1.csv
+
+data = csv_to_dict('CV1.csv')
+labels = create_label_list(data)
+print_labels(labels)
