@@ -72,8 +72,9 @@ def create_label_list(data):
         # Ensure the row has at least 5 columns (Skipping the blank rows)
         if len(data[i]) > 4:
             # Extracting the "choice" column
-            label = data[i][2]
-            lst.append(label)
+            if data[i][2]:  # Checking if choice is not empty
+                label = data[i][2]
+                lst.append(label)
     return lst
 
 # Print the list of labels
@@ -81,8 +82,17 @@ def print_labels(lst):
     for i in range(len(lst)):
         print(lst[i])
 
-# Testing for file CV1.csv
+# Importing data from file CV1.csv
 
 data = csv_to_dict('CV1.csv')
-labels = create_label_list(data)
-print_labels(labels)
+labelscv1 = create_label_list(data)
+print_labels(labelscv1)
+
+# File 2 and 3
+data = csv_to_dict('CV2.csv')
+labelscv2 = create_label_list(data)
+print_labels(labelscv2)
+
+data = csv_to_dict('CV3.csv')
+labelscv3 = create_label_list(data)
+print_labels(labelscv3)
