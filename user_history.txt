@@ -1,0 +1,134 @@
+    1  mkdir -p ~/local/python310
+    2  mkdir -p ~/downloads
+    3  cd ~/downloads
+    4  wget https://www.python.org/ftp/python/3.10.11/Python-3.10.11.tgz
+    5  wget https://www.python.org/ftp/python/3.10.11/Python-3.10.11.tgz.asc
+    6  tar xzf Python-3.10.11.tgz
+    7  cd Python-3.10.11
+    8  ./configure
+    9  make -j$(nproc)
+   10  make install
+   11  python3.10 -m venv ~/envs/py310env
+   12  python3.10 -m venv
+   13  pip install label-studio
+   14  ./configure   --prefix=$HOME/local/python310   --enable-optimizations   --with-ensurepip=install
+   15  make clean
+   16  make -j$(nproc)
+   17  make install
+   18  echo 'export PATH=$HOME/local/python310/bin:$PATH' >> ~/.bashrc
+   19  echo 'export PYTHONPATH=$HOME/local/python310/lib/python3.10/site-packages:$PYTHONPATH' >> ~/.bashrc
+   20  source ~/.bashrc
+   21  python3.10 -m venv ~/envs/py310env
+   22  source ~/envs/py310env/bin/activate
+   23  pip install label-studio
+   24  mkdir -p ~/local/openssl
+   25  cd ~/downloads
+   26  wget https://www.openssl.org/source/openssl-1.1.1w.tar.gz
+   27  tar xzf openssl-1.1.1w.tar.gz
+   28  cd openssl-1.1.1w
+   29  ./config --prefix=$HOME/local/openssl
+   30  make
+   31  make install
+   32  cd ~/downloads/Python-3.10.11
+   33  ./configure     --prefix=$HOME/local/python310     --with-openssl=$HOME/local/openssl     --with-openssl-rpath=auto     --enable-optimizations
+   34  make clean
+   35  make -j$(nproc)
+   36  make install
+   37  echo 'export LD_LIBRARY_PATH=$HOME/local/openssl/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+   38  source ~/.bashrc
+   39  ~/local/python310/bin/python3.10 -m venv ~/envs/py310env
+   40  source ~/envs/py310env/bin/activate
+   41  pip install label-studio
+   42  cd ~/downloads/Python-3.10.11
+   43  ./configure     --prefix=$HOME/local/python310     --with-openssl=$HOME/local/openssl     --with-openssl-rpath=auto     --enable-optimizations
+   44  make clean
+   45  make -j$(nproc)
+   46  make install
+   47  echo 'export LD_LIBRARY_PATH=$HOME/local/sqlite/lib:$HOME/local/openssl/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+   48  source ~/.bashrc
+   49  rm -rf ~/envs/py310env
+   50  ~/local/python310/bin/python3.10 -m venv ~/envs/py310env
+   51  source ~/envs/py310env/bin/activate
+   52  python -c "import sqlite3; print(sqlite3.sqlite_version)"
+   53  decativate
+   54  deactivate
+   55  echo 'export LD_LIBRARY_PATH=$HOME/local/openssl/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+   56  source ~/.bashrc
+   57  ~/local/python310/bin/python3.10 -m venv ~/envs/py310env
+   58  source ~/envs/py310env/bin/activate
+   59  python -c "import ssl; print(ssl.OPENSSL_VERSION)"
+   60  pip install label-studio
+   61  label-studio
+   62  cd ~/downloads
+   63  wget https://www.sqlite.org/2024/sqlite-autoconf-3450000.tar.gz
+   64  tar xzf sqlite-autoconf-3450000.tar.gz
+   65  cd sqlite-autoconf-3450000
+   66  ./configure --prefix=$HOME/local/sqlite
+   67  make
+   68  make install
+   69  cd ~/downloads/Python-3.10.11
+   70  ./configure     --prefix=$HOME/local/python310     --with-sqlite3=$HOME/local/sqlite     --with-openssl=$HOME/local/openssl     --enable-optimizations     --with-ensurepip=install
+   71  make clean
+   72  make -j$(nproc)
+   73  make install
+   74  echo 'export LD_LIBRARY_PATH=$HOME/local/sqlite/lib:$HOME/local/openssl/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+   75  source ~/.bashrc
+   76  rm -rf ~/envs/py310env
+   77  ~/local/python310/bin/python3.10 -m venv ~/envs/py310env
+   78  source ~/envs/py310env/bin/activate
+   79  python -c "import sqlite3; print(sqlite3.sqlite_version)"
+   80  pip install label-studio
+   81  pip install --upgrade pip
+   82  label-studio start
+   83  cd ~/downloads
+   84  wget https://www.sqlite.org/2024/sqlite-autoconf-3450000.tar.gz
+   85  tar xzf sqlite-autoconf-3450000.tar.gz
+   86  cd sqlite-autoconf-3450000
+   87  ./configure --prefix=$HOME/local/sqlite
+   88  make
+   89  make install
+   90  cd ~/downloads/Python-3.10.11
+   91  ./configure     --prefix=$HOME/local/python310     --with-sqlite3=$HOME/local/sqlite     --with-openssl=$HOME/local/openssl     --enable-optimizations     --with-ensurepip=install
+   92  make clean
+   93  make -j$(nproc)
+   94  make install
+   95  cd ~/downloads
+   96  wget https://www.sqlite.org/2024/sqlite-autoconf-3450000.tar.gz
+   97  tar xzf sqlite-autoconf-3450000.tar.gz
+   98  cd sqlite-autoconf-3450000
+   99  ./configure --prefix=$HOME/local/sqlite
+  100  make
+  101  make install
+  102  cd ~/downloads/Python-3.10.11
+  103  export LDFLAGS="-L$HOME/local/sqlite/lib"
+  104  export CPPFLAGS="-I$HOME/local/sqlite/include"
+  105  export LD_LIBRARY_PATH="$HOME/local/sqlite/lib:$LD_LIBRARY_PATH"
+  106  ./configure     --prefix=$HOME/local/python310     --enable-loadable-sqlite-extensions     --with-sqlite3=$HOME/local/sqlite     --enable-optimizations
+  107  make clean
+  108  make -j$(nproc)
+  109  make install
+  110  rm -rf ~/envs/py310env
+  111  ~/local/python310/bin/python3.10 -m venv ~/envs/py310env
+  112  source ~/envs/py310env/bin/activate
+  113  python -c "import sqlite3; print(sqlite3.sqlite_version)"
+  114  pip install label-studio
+  115  label-studio
+  116  history
+  117  history > user_history.txt.
+  118  cat user_history.txt. 
+  119  history > user_history.txt
+  120  cat user_history.txt 
+  121  git init
+  122  ls
+  123  mv user_history.txt ../user_history.txt
+  124  cd ..
+  125  ls
+  126  mkdir assignment_3
+  127  mv user_history.txt assignment_3/user_history.txt
+  128  cd assignment_3/
+  129  ls
+  130  git init
+  131  cd ..
+  132  git clone https://github.com/Praanshu101/Dataset_Annotation
+  133  cd Dataset_Annotation/
+  134  history > user_history.txt
