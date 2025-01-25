@@ -1,10 +1,16 @@
-Assignment 3 of CS 203: Software Tools and Techniques for AI
+# Assignment 3 of CS 203: Software Tools and Techniques for AI
 
-Dataset Annotation (using label studio) and Inter-Annotator Agreement using Cohen's Kappa and Fleiss' Kappa.
+## Dataset Annotation
 
-CVx.csv is the annotations done by person x.
-Similarly, NERx.csv is the annotations done by person x.
+Using Label Studio for dataset annotation and calculating Inter-Annotator Agreement using Cohen's Kappa and Fleiss' Kappa.
 
-Person 1: Praanshu (Team 21)
-Person 2: Rishank (Team 21)
-Person 3: Paras (Team 18)
+### Annotations
+
+- **CVx.csv**: Annotations done by person x.
+- **NERx.csv**: Annotations done by person x.
+
+### Annotators
+
+- **Person 1**: Praanshu (Team 21)
+- **Person 2**: Rishank (Team 21)
+- **Person 3**: Paras (Team 18)
