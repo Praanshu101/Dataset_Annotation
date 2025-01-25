@@ -10,7 +10,7 @@ annotation_id,annotator,choice,created_at,id,image,lead_time,updated_at
 ,,,,,,,
 45,1,No Trucks,2025-01-24T09:14:31.406425Z,14444,/data/upload/5/131035f1-img_404.jpg,26.488,2025-01-24T09:14:31.406425Z
 ,,,,,,,
-46,1,No Trucks,2025-01-24T09:14:44.177673Z,14445,/data/upload/5/811885c2-img_405.jpg,10.961,2025-01-24T09:14:44.177673Z
+46,1,Trucks,2025-01-24T09:14:44.177673Z,14445,/data/upload/5/811885c2-img_405.jpg,10.961,2025-01-24T09:14:44.177673Z
 ,,,,,,,
 47,1,No Trucks,2025-01-24T09:14:51.332702Z,14446,/data/upload/5/3bf10eeb-img_406.jpg,5.328,2025-01-24T09:14:51.332702Z
 ,,,,,,,
@@ -24,7 +24,7 @@ annotation_id,annotator,choice,created_at,id,image,lead_time,updated_at
 ,,,,,,,
 52,1,No Trucks,2025-01-24T09:16:14.211218Z,14451,/data/upload/5/978bb15b-img_411.jpg,15.653,2025-01-24T09:16:14.211218Z
 ,,,,,,,
-53,1,Trucks,2025-01-24T09:16:44.573910Z,14452,/data/upload/5/953ec37a-img_412.jpg,28.844,2025-01-24T09:16:44.573910Z
+53,1,No Trucks,2025-01-24T09:16:44.573910Z,14452,/data/upload/5/953ec37a-img_412.jpg,28.844,2025-01-24T09:16:44.573910Z
 ,,,,,,,
 54,1,Trucks,2025-01-24T09:16:51.562987Z,14453,/data/upload/5/a3210d78-img_413.jpg,5.156,2025-01-24T09:16:51.562987Z
 ,,,,,,,
